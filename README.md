@@ -16,7 +16,8 @@ The dashboard is largely a combination of ideas found in other tutorials and imp
 * Added the `purpose`-field of the dataset as a clickable row detail and made the datatable searchable on that field.
 * Fixed a bug that caused DataTables to display a warning message for text searches that return empty selections by defining a `defaultContent`-parameter for all columns.
 
-Please fill your access token mapbox in file dc.leaflet.js:
+Please fill your access token mapbox.com in file dc.leaflet.js:
+
     var _tiles=function(map) {
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
