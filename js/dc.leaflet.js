@@ -49,12 +49,23 @@ dc_leaflet.leafletBase = function(_chart) {
         return L.map(child_div.node(),_mapOptions);
     };
 
-    var _tiles=function(map) {
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-    };
+    // edit by John Eswin Nizar 08.03.2020 
+//    var _tiles=function(map) {
+//        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+//            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+//        }).addTo(map);
+//    };
 
+    // add by John Eswin Nizar 08.03.2020
+    var _tiles=function(map) {
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'YOUR-MAPBOX.COM-ACCESS-TOKEN'
+}).addTo(map);
+    };    
+    
     _chart.createLeaflet = function(_) {
         if(!arguments.length) {
             return _createLeaflet;
