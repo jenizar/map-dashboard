@@ -1,0 +1,7 @@
+---
+applications:
+- name: map-dashboard
+  random-route: true
+  instances: 1
+  buildpack: staticfile_buildpack
+  memory: 512M
